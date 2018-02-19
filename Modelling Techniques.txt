@@ -1,0 +1,13 @@
+Build 20 different models with 80/20 random sampling with replacement.
+Then make the decision to classify each indidivudal prediction with the majority percentage.
+i.e. if 18 models out of 20 predict "Yes" then you choose "Yes" as final prediction
+
+Stratified shuffling split - good way to include an even distribution in your training data so that
+you have an equal balance of loans - for example, if you have a small population of loans that 
+default - 2%, you want to make sure you include enough samples so that you have some bad loans.
+
+StandardScaler - idea behind StandardScaler is that it will transform your data such
+that its distribution will have a mean value 0 and standard deviation of 1. It is useful when you want
+to compare data that correspond to different units. In that case, you want to remove the units. 
+To do that in a consistent way of all the data, you transform the data in a way that 
+the variance is unitary and that the mean of the series is 0.

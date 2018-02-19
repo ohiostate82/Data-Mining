@@ -1,0 +1,6 @@
+predicting arrival indicator - yes or no
+linear RBG option selection
+7:30 Thursday meeting
+pick up SVM modelling on SE ="Southeast" dataset and after the X and Y variables are defined
+
+61,460 rows
