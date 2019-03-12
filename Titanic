@@ -1,0 +1,18 @@
+# data analysis and wrangling
+import pandas as pd
+import numpy as np
+import random as rnd
+
+train_df = pd.read_csv('C:\\Users\\Brian\\train.csv') #train dataset
+test_df = pd.read_csv('C:\\Users\\Brian\\test.csv') # test dataset
+titanic_comb_df = pd.concat([train_df,test_df], axis=0) # combine df into one dataframe
+titanic_comb_rmv_nan = titanic_comb_df[pd.notnull(titanic_comb_df['Age'])] # remove nan values from Age column
+titanic_comb_rmv_nan.info()
+
+#titanic_comb_list = [train_df, test_df] # combine dfs into list for easier correlation computation
+
+# Calculate Pearson R for Age versus Numeric Variables
+print("Age and Pclass Pearson R: " + str(round(titanic_comb_rmv_nan['Age'].corr(titanic_comb_rmv_nan['Pclass']),3)))
+print("Age and SibSp Pearson R: " + str(round(titanic_comb_rmv_nan['Age'].corr(titanic_comb_rmv_nan['SibSp']),3)))
+print("Age and Parch Pearson R: " + str(round(titanic_comb_rmv_nan['Age'].corr(titanic_comb_rmv_nan['Parch']),3)))
+print("Age and Fare Pearson R: " + str(round(titanic_comb_rmv_nan['Age'].corr(titanic_comb_rmv_nan['Fare']),3)))
